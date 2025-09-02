@@ -4,11 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Faith University College - Excellence in Higher Education</title>
-    <meta name="description" content="Faith University College - Empowering minds, shaping futures. Quality higher education with academic excellence and Christian values in Ghana." />
+    <meta name="description" content="Faith University College - Empowering minds, shaping futures. Quality higher education with academic excellence and Christian values in Liberia." />
     <meta name="author" content="Faith University College" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#f97316" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Faith Uni" />
+    
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
 
     <meta property="og:title" content="Faith University College - Excellence in Higher Education" />
-    <meta property="og:description" content="Faith University College - Empowering minds, shaping futures. Quality higher education with academic excellence and Christian values in Ghana." />
+    <meta property="og:description" content="Faith University College - Empowering minds, shaping futures. Quality higher education with academic excellence and Christian values in Liberia." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
@@ -20,5 +31,20 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
   </body>
 </html>

@@ -46,7 +46,7 @@ const AdminDashboard = () => {
     },
     {
       title: "Revenue (This Month)",
-      value: "GH¢ 1.2M",
+      value: "L$ 1.2M",
       change: "+15%",
       icon: DollarSign,
       color: "text-green-600", 

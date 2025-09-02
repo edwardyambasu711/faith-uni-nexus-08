@@ -32,7 +32,7 @@ const StudentDashboard = () => {
   const quickStats = [
     {
       title: "Outstanding Fees",
-      value: `GH¢ ${studentData.outstandingFees.toLocaleString()}`,
+      value: `L$ ${studentData.outstandingFees.toLocaleString()}`,
       icon: CreditCard,
       color: "text-red-600",
       bgColor: "bg-red-50",

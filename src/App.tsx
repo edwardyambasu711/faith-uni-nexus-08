@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Programs from "./pages/Programs";
+import Apply from "./pages/Apply";
+import Contact from "./pages/Contact";
+import VerifyCertificate from "./pages/VerifyCertificate";
 import StudentDashboard from "./pages/StudentDashboard";
 import StudentProfile from "./pages/student/Profile";
 import StudentCourses from "./pages/student/Courses";
@@ -26,6 +29,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
           <Route path="/programs" element={<Programs />} />
+          <Route path="/apply" element={<Apply />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/verify-certificate" element={<VerifyCertificate />} />
           
           {/* Student Portal Routes */}
           <Route path="/student/dashboard" element={<StudentDashboard />} />

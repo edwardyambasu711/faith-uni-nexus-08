@@ -1,0 +1,85 @@
+{
+  "name": "Faith University College",
+  "short_name": "Faith Uni",
+  "description": "Faith University College - Excellence in Higher Education",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512", 
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Faith University College Homepage"
+    },
+    {
+      "src": "/screenshots/mobile-home.png", 
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Faith University College Mobile"
+    }
+  ],
+  "categories": ["education", "academic", "university"],
+  "lang": "en",
+  "shortcuts": [
+    {
+      "name": "Student Portal",
+      "short_name": "Portal",
+      "description": "Access student portal",
+      "url": "/login",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Apply Now",
+      "short_name": "Apply",
+      "description": "Start application process",
+      "url": "/apply",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Programs",
+      "short_name": "Programs",
+      "description": "View academic programs",
+      "url": "/programs",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

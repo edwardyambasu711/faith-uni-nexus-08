@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import PWAInstall from "@/components/PWAInstall";
 import { 
   DropdownMenu, 
   DropdownMenuContent, 
@@ -290,6 +291,9 @@ const PortalLayout = ({ children, userType, userName, userRole, notifications = 
           </main>
         </div>
       </div>
+      
+      {/* PWA Install Prompt */}
+      <PWAInstall />
     </div>
   );
 };
