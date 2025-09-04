@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import PWAInstall from "@/components/PWAInstall";
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,6 +16,7 @@ export const Layout = ({ children, showFooter = true }: LayoutProps) => {
         {children}
       </main>
       {showFooter && <Footer />}
+      <PWAInstall />
     </div>
   );
 };

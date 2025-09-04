@@ -1,30 +1,16 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Menu, X, User, GraduationCap, Users, Settings, LogOut } from "lucide-react";
+import { Menu, X, GraduationCap } from "lucide-react";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  
-  // Mock user state - in real app this would come from auth context
-  const isLoggedIn = location.pathname.includes('/dashboard') || location.pathname.includes('/portal');
-  const userType = location.pathname.includes('/student') ? 'student' : 
-                   location.pathname.includes('/staff') ? 'staff' : 
-                   location.pathname.includes('/admin') ? 'admin' : null;
 
-  const publicNavItems = [
+  const navItems = [
     { href: "/", label: "Home" },
     { href: "/programs", label: "Programs" },
-    { href: "/admissions", label: "Admissions" },
-    { href: "/fees", label: "Fees" },
+    { href: "/gallery", label: "Gallery" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -43,7 +29,7 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {!isLoggedIn && publicNavItems.map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.href}
                 to={item.href}
@@ -58,57 +44,16 @@ export const Navbar = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            {!isLoggedIn ? (
-              <>
-                <Link to="/verify-certificate">
-                  <Button variant="outline" size="sm">
-                    Verify Certificate
-                  </Button>
-                </Link>
-                <Link to="/login">
-                  <Button variant="default" size="sm">
-                    Login
-                  </Button>
-                </Link>
-                <Link to="/apply">
-                  <Button variant="hero" size="sm">
-                    Apply Now
-                  </Button>
-                </Link>
-              </>
-            ) : (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                    <User className="h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56" align="end" forceMount>
-                  <div className="flex items-center justify-start gap-2 p-2">
-                    <div className="flex flex-col space-y-1 leading-none">
-                      <p className="font-medium">John Doe</p>
-                      <p className="text-xs text-muted-foreground capitalize">
-                        {userType} Portal
-                      </p>
-                    </div>
-                  </div>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <User className="mr-2 h-4 w-4" />
-                    Profile
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Settings className="mr-2 h-4 w-4" />
-                    Settings
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <LogOut className="mr-2 h-4 w-4" />
-                    Log out
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            )}
+            <Link to="/verify-certificate">
+              <Button variant="outline" size="sm">
+                Verify Certificate
+              </Button>
+            </Link>
+            <Link to="/apply">
+              <Button variant="hero" size="sm">
+                Apply Now
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -128,7 +73,7 @@ export const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-background border-t border-border">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {!isLoggedIn && publicNavItems.map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.href}
                 to={item.href}
@@ -143,25 +88,18 @@ export const Navbar = () => {
               </Link>
             ))}
             
-            {!isLoggedIn && (
-              <div className="pt-4 space-y-2">
-                <Link to="/verify-certificate" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="outline" className="w-full">
-                    Verify Certificate
-                  </Button>
-                </Link>
-                <Link to="/login" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="default" className="w-full">
-                    Login
-                  </Button>
-                </Link>
-                <Link to="/apply" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="hero" className="w-full">
-                    Apply Now
-                  </Button>
-                </Link>
-              </div>
-            )}
+            <div className="pt-4 space-y-2">
+              <Link to="/verify-certificate" onClick={() => setIsMenuOpen(false)}>
+                <Button variant="outline" className="w-full">
+                  Verify Certificate
+                </Button>
+              </Link>
+              <Link to="/apply" onClick={() => setIsMenuOpen(false)}>
+                <Button variant="hero" className="w-full">
+                  Apply Now
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       )}
